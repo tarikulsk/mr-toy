@@ -1,8 +1,61 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Route/AuthProvider/AuthProvider';
 
 const Login = () => {
+
+    const { logIn, signInWithGoogle } = useContext(AuthContext);
+    const [show, setShow] = useState('');
+    const [error, setError] = useState('');
+
+    const navigate = useNavigate();
+    const location = useLocation();
+
+
+    const handleLogin = event => {
+        event.preventDefault()
+
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const from = location.state?.from?.pathname || '/';
+
+        logIn(email, password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                form.reset();
+
+                navigate(from, { replace: true })
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+        console.log(email, password);
+        if (password.length > 6) {
+            setError('Password must be 6 characters')
+            return
+        }
+
+    }
+
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser)
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+    }
+
+
+
+
     return (
         <div >
 
@@ -12,8 +65,8 @@ const Login = () => {
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <h1 className="text-3xl text-center mt-3 text-blue-00 font-bold"> Login now!</h1>
-                        <form className="card-body">
-                            {/* onSubmit={handleLogin} */}
+                        <form onSubmit={handleLogin} className="card-body">
+
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -24,15 +77,15 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input name='password' placeholder="password" className="input input-bordered" />
+                                <input type={show ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" />
 
 
-                                {/* type={show ? 'text' : 'password'}
+
                                 <p onClick={() => { setShow(!show) }}> <small>
                                     {
                                         show ? <span>Hide Password</span> : <span>Show Password</span>
                                     }
-                                </small> </p> */}
+                                </small> </p>
 
                             </div>
                             <div className="form-control mt-6">
@@ -40,12 +93,12 @@ const Login = () => {
                             </div>
                         </form>
 
-                        {/* <p className='text-center'>{error}</p> */}
+                        <p className='text-center'>{error}</p>
                         <br />
                         <p className='text-center'>If You are a New User ? <Link to={'/register'} className='btn-link'>Register</Link> </p>
                         <hr />
                         <div className='m-3 px-3 py-1 text-center border border-base-300 rounded '>
-                            <button className='flex gap-2 '><img className='h-9 w-9' src="https://cdn.freebiesupply.com/logos/large/2x/google-icon-logo-png-transparent.png" alt="" />
+                            <button onClick={handleGoogleLogin} className='flex gap-2 '><img className='h-9 w-9' src="https://cdn.freebiesupply.com/logos/large/2x/google-icon-logo-png-transparent.png" alt="" />
                                 <h4 className='text-2xl'>With Google </h4>
                             </button>
 
