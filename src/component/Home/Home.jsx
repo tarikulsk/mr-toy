@@ -1,10 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import HeroSection from '../HeroSection/HeroSection';
 
 const Home = () => {
     return (
         <div>
-            <h1>This Home Pages</h1>
+            <HeroSection></HeroSection>
+
 
         </div>
     );
