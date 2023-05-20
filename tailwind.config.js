@@ -9,28 +9,27 @@ export default {
       {
         mytheme: {
 
-          "primary": "#1f1f96",
+          "primary": "#7588ce",
 
-          "secondary": "#a718f9",
+          "secondary": "#f7a325",
 
-          "accent": "#add61b",
+          "accent": "#4b7708",
 
-          "neutral": "#2F1E2F",
+          "neutral": "#161627",
 
-          "base-100": "#FAF9FA",
+          "base-100": "#F5F5F5",
 
-          "info": "#4796DC",
+          "info": "#7D9DE8",
 
-          "success": "#32C869",
+          "success": "#17B075",
 
-          "warning": "#FCB35A",
+          "warning": "#F4A657",
 
-          "error": "#F8240D",
+          "error": "#EA5779",
         },
       },
     ],
   },
-  // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],
 }
 
