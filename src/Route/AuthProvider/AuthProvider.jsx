@@ -1,4 +1,50 @@
 
+// // eslint-disable-next-line no-unused-vars
+// import React, { createContext } from 'react';
+// import app from '../../component/firebase.config';
+// const AuthContext=createContext(null);
+// import { GoogleAuthProvider, getAuth } from "firebase/auth";
+
+// const auth = getAuth(app);
+
+// const AuthProvider = () => {
+// const googleProvider=new (GoogleAuthProvider);
+
+
+//     return (
+//         <div>
+//             <AuthContext.Provider>
+
+//             </AuthContext.Provider>
+
+
+//         </div>
+//     );
+// };
+
+// export default AuthProvider;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // eslint-disable-next-line no-unused-vars
 import React, { createContext, useEffect, useState } from 'react';
 // import app from '../../component/firebase.config';
@@ -11,7 +57,7 @@ import app from '../../component/firebase.config';
 const auth = getAuth(app)
 // eslint-disable-next-line no-unused-vars, react/prop-types
 const AuthProvider = ({ children }) => {
-    // const user = { displayName: 'all' }
+
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
     const googleProvider = new (GoogleAuthProvider);
@@ -23,7 +69,7 @@ const AuthProvider = ({ children }) => {
 
     }
 
-    const signUp = (email, password) => {
+    const register = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -54,7 +100,7 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         logIn,
         user,
-        signUp,
+        register,
         logOut,
         loading,
         signInWithGoogle,
