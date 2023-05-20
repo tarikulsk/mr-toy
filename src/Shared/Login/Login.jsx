@@ -44,17 +44,11 @@ const Login = () => {
                         <br />
                         <p className='text-center'>If You are a New User ? <Link to={'/register'} className='btn-link'>Register</Link> </p>
                         <hr />
-                        <div className='mt-5 p-5 text-center '>
-                            <h4 className='text-2xl'>Login With </h4>
+                        <div className='m-3 px-3 py-1 text-center border border-base-300 rounded '>
+                            <button className='flex gap-2 '><img className='h-9 w-9' src="https://cdn.freebiesupply.com/logos/large/2x/google-icon-logo-png-transparent.png" alt="" />
+                                <h4 className='text-2xl'>With Google </h4>
+                            </button>
 
-                            <div className='flex mt-3 justify-around'>
-                                <div >
-
-                                    <button><img className='h-12 w-12' src="https://cdn.freebiesupply.com/logos/large/2x/google-icon-logo-png-transparent.png" alt="" /></button>
-
-                                </div>
-
-                            </div>
                         </div>
 
                     </div>
