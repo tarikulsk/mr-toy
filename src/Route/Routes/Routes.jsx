@@ -13,6 +13,7 @@ import AddAToy from "../../component/AddAToy/AddAToy";
 import Error from "../../component/Error/Error";
 
 
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -48,6 +49,8 @@ const router = createBrowserRouter([
                 path: '/addtoy',
                 element: <AddAToy></AddAToy>
             }
+
+
 
 
         ]
