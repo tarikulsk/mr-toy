@@ -6,7 +6,7 @@ import Toy from '../Toy/Toy';
 const AllToys = () => {
 
     const toys = useLoaderData()
-    console.log(toys);
+    // console.log(toys);
 
     return (
         <div className='grid md:grid-cols-4 gap-5 p-10'>

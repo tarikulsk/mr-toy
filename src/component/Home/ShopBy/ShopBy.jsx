@@ -37,18 +37,6 @@ const ShopBy = () => {
         <div className='text-center mb-10 bg-white p-10'>
             <h1 className='text-3xl font-bold mb-8'>Shop By Category </h1>
 
-            {/* {
-                ironman.map(iron => <Ironman
-                    key={iron.id}
-                    iron={iron}
-                ></Ironman>)
-            } */}
-            {/* {
-                console.log(ironman[0].toyName)
-            }
-            {
-                console.log(spiderman[0].toyName)
-            } */}
 
 
             <div className='grid md:grid-cols-3 w-9/12 m-auto'>
@@ -131,7 +119,7 @@ const ShopBy = () => {
                     {/* The button to open modal */}
                     <div className='grid grid-cols-1'>
                         <a href="#my_modal_10"> <img className='rounded' src="	https://m.media-amazon.com/images/I/71i9qpoBMeL._SX522_.jpg" alt="" /></a>
-                        <h1>Spider Man</h1>
+                        <h1>Galaxy</h1>
                     </div>
 
 
@@ -163,16 +151,7 @@ const ShopBy = () => {
 
 
 
-                    {/* Put this part before </body> tag */}
-                    {/* <div className="modal" id="my_modal_8">
-                        <div className="modal-box">
-                            <h3 className="font-bold text-lg">Hello!</h3>
-                            <p className="py-4">This modal works with anchor links</p>
-                            <div className="modal-action">
-                                <a href="#" className="btn">Yay!</a>
-                            </div>
-                        </div>
-                    </div> */}
+
 
                 </div>
 

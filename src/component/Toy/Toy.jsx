@@ -2,7 +2,7 @@
 import React from 'react';
 
 const Toy = ({ toy }) => {
-    console.log(toy);
+    // console.log(toy);
     const { id,
         photoUrl
         , toyName

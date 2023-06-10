@@ -78,7 +78,7 @@ const AddAToy = () => {
                     <input type="text" name='description' required placeholder="This toy is .." className="input input-bordered" />
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Register</button>
+                    <button className="btn btn-primary">Press to Add </button>
                 </div>
 
                 {/* <input className='btn justify-center' type="submit" value="Submit" /> */}
