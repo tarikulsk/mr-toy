@@ -2,7 +2,7 @@
 import React from 'react';
 import HeroSection from './HeroSection/HeroSection';
 import GallerySection from '../GallerySection/GallerySection';
-import ShopBy from './ShopBy/ShopBy';
+// import ShopBy from './ShopBy/ShopBy';
 // import Toys from './Toys/Toys';
 // import Toys from './Toys/Toys';
 
@@ -14,7 +14,7 @@ const Home = () => {
             {/* <Toys></Toys> */}
             <br />
             <br />
-            <ShopBy></ShopBy>
+            {/* <ShopBy></ShopBy> */}
             <GallerySection></GallerySection>
 
 

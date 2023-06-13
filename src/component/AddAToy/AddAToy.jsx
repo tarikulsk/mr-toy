@@ -7,8 +7,35 @@ const AddAToy = () => {
         event.preventDefault();
         const form = event.target;
         // const form = event.target.form;n
-        const photoURL = form.photoURL.value;
-        console.log(photoURL);
+        const photoUrl = form.photoUrl.value;
+        const toyName = form.toyName.value;
+        const sellerName = form.sellerName.value;
+        const sellerEmail = form.sellerEmail.value;
+        const subcategory = form.subcategory.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const availableQuantity = form.availableQuantity.value;
+        const description = form.description.value;
+
+        const toy = { photoUrl, toyName, sellerName, sellerEmail, subcategory, price, rating, availableQuantity, description }
+        console.log(toy);
+
+        fetch('http://localhost:5000/addtoy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(toy)
+        })
+
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    alert('Hurry !Toy Added Successfully!')
+                    form.reset();
+                }
+            })
 
     }
 
