@@ -11,6 +11,7 @@ import AllToys from "../../component/AllToys/AllToys";
 import MyToys from "../../component/MyToys/MyToys";
 import AddAToy from "../../component/AddAToy/AddAToy";
 import Error from "../../component/Error/Error";
+import Update from "../../component/AddAToy/update";
 
 
 
@@ -49,6 +50,11 @@ const router = createBrowserRouter([
             {
                 path: '/addtoy',
                 element: <AddAToy></AddAToy>
+            },
+            {
+                path: '/update/:id',
+                element: <Update></Update>,
+                loader: ({ params }) => fetch(`http://localhost:5000/addtoy/${params.id}`)
             }
 
 
