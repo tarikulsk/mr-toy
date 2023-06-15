@@ -12,6 +12,7 @@ import MyToys from "../../component/MyToys/MyToys";
 import AddAToy from "../../component/AddAToy/AddAToy";
 import Error from "../../component/Error/Error";
 import Update from "../../component/AddAToy/update";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 
 
@@ -49,11 +50,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addtoy',
-                element: <AddAToy></AddAToy>
+                element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
             },
             {
                 path: '/update/:id',
-                element: <Update></Update>,
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/addtoy/${params.id}`)
             }
 

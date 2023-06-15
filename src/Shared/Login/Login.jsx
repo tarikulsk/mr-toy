@@ -8,9 +8,12 @@ const Login = () => {
     const { logIn, signInWithGoogle } = useContext(AuthContext);
     const [show, setShow] = useState('');
     const [error, setError] = useState('');
-
     const navigate = useNavigate();
     const location = useLocation();
+    console.log(location);
+    const from = location.state?.from?.pathname || '/';
+
+    // const from = location.state?.from?.pathname || '/'
 
 
     const handleLogin = event => {
@@ -19,15 +22,14 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        const from = location.state?.from?.pathname || '/';
+
 
         logIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
                 form.reset();
-
-                navigate(from, { replace: true })
+                navigate(from)
             })
             .catch(error => {
                 console.log(error);
@@ -46,6 +48,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
+                navigate(from)
             })
             .catch(error => {
                 console.log(error);
