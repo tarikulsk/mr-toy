@@ -11,7 +11,7 @@ https://incandescent-puffpuff-653e4e.netlify.app
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** React, TailwindCSS
 
 **Server:** Node, Express
 
